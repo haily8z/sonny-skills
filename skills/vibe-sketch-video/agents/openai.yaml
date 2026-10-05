@@ -1,0 +1,18 @@
+interface:
+  display_name: Vibe Sketch Video
+  short_description: 'Hand-drawn DOODLE / stickman video (vibe sketch) from a topic or
+    source text: scene script, voice-over, English image prompts, doodle image set (with
+    or without exact on-image text in the chosen language), TTS, Ken Burns clips and a
+    finished MP4 with subtitles; or an image set only. Always asks first: topic,
+    language, aspect ratio, duration, run mode (review each stage / run straight
+    through), text overlay yes/no. Triggers: doodle, stickman, sketch, vẽ tay, người
+    que, phác thảo, video giải thích.'
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

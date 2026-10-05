@@ -1,0 +1,17 @@
+{
+  "name": "sonny-skills",
+  "owner": {
+    "name": "Đặng Hữu Sơn",
+    "url": "https://github.com/sonlovinbot"
+  },
+  "metadata": {
+    "description": "Bộ skill khoá đào tạo của Đặng Hữu Sơn: video AI (phim hoạt hình, doodle) và content marketing."
+  },
+  "plugins": [
+    {
+      "name": "sonny-skills",
+      "source": "./",
+      "description": "Phim hoạt hình Muse, video doodle vẽ tay, content ads, content Facebook, Meta Ads."
+    }
+  ]
+}
