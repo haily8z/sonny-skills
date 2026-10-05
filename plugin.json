@@ -1,0 +1,9 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "sonny-skills",
+  "version": "1.0.0",
+  "description": "Bộ skill của Đặng Hữu Sơn cho khoá đào tạo: phim hoạt hình Muse, video doodle vẽ tay, content quảng cáo (lịch content, AIDA, PAS, BAB), content Facebook, thiết lập Meta Ads.",
+  "author": { "name": "Đặng Hữu Sơn", "url": "https://github.com/sonlovinbot" },
+  "repository": "https://github.com/sonlovinbot-team/sonny-skills",
+  "license": "MIT"
+}

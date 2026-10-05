@@ -1,0 +1,13 @@
+{
+  "name": "sonny-skills",
+  "interface": { "displayName": "Sonny Skills" },
+  "plugins": [
+    {
+      "name": "sonny-skills",
+      "source": { "source": "local", "path": "./" },
+      "policy": { "installation": "AVAILABLE", "authentication": "ON_INSTALL" },
+      "category": "Productivity",
+      "interface": { "displayName": "Sonny Skills" }
+    }
+  ]
+}
