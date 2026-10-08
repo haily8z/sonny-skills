@@ -2,6 +2,7 @@
 title: "Một đường chuyền đổi cánh có thể mở khóa cả trận đấu"
 date: 2026-10-06 08:00:00 +0700
 category: "Chiến thuật"
+sport: football
 author: "Sân Cỏ"
 reading_time: "3 phút đọc"
 excerpt: "Bài mẫu giải thích vì sao đưa bóng sang phía đối diện có thể kéo giãn khối phòng ngự và tạo ra khoảnh khắc quyết định."
