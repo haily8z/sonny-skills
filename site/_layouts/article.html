@@ -23,6 +23,7 @@
 <p class="dek">{{ page.excerpt | strip_html | strip }}</p>
 <div class="article-meta"><span>{{ page.author | default: "Ban biên tập Sân Cỏ" }}</span><span>·</span><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%d.%m.%Y" }}</time><span>·</span><span>{{ page.reading_time | default: "5 phút đọc" }}</span>{% if page.demo %}<span class="tag demo">Bài mẫu</span>{% endif %}</div>
 </header>
+{% if page.image %}<figure class="article-image"><img src="{{ page.image | relative_url }}" alt="{{ page.image_alt | default: page.title | escape }}" loading="lazy"></figure>{% endif %}
 <div class="article-body">
 {% if page.demo %}<div class="demo-notice">BÀI MẪU — Nội dung minh họa cách trình bày, không phải tin tức thời sự.</div>{% endif %}
 {{ content }}
