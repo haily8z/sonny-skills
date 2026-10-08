@@ -16,6 +16,7 @@ Trang báo chạy miễn phí trên GitHub Pages. Bài viết được lưu thà
 title: "Tiêu đề bài viết"
 date: 2026-10-09 09:00:00 +0700
 category: "Bóng đá"
+sport: football
 author: "Tên tác giả"
 reading_time: "4 phút đọc"
 excerpt: "Một câu giới thiệu ngắn hiển thị trên trang chủ."
@@ -31,7 +32,7 @@ Sau dấu --- cuối phần thông tin, viết bài bằng Markdown:
 - > đoạn trích để tạo câu dẫn.
 - Dòng trắng để bắt đầu đoạn mới.
 
-Có thể đặt chuyên mục là **Bóng đá**, **Bóng rổ**, **Tennis**, hoặc **Thể thao khác**. Để bài xuất hiện đúng thứ tự, ngày trong tên tệp và trường date nên trùng nhau.
+Chọn sport để bài vào đúng bộ lọc: **football** (Bóng đá), **basketball** (Bóng rổ), hoặc **tennis**. Trường category là nhãn bài hiển thị, có thể ghi như **Bóng đá**, **Chiến thuật**, **Bóng rổ** hoặc **Tennis**. Để bài xuất hiện đúng thứ tự, ngày trong tên tệp và trường date nên trùng nhau.
 
 ## Sửa hoặc gỡ bài
 
