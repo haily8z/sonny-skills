@@ -2,6 +2,7 @@
 title: "Khoảng nghỉ giữa hai điểm: phần chiến thuật ít ai nhìn thấy"
 date: 2026-10-04 08:00:00 +0700
 category: "Tennis"
+sport: tennis
 author: "Sân Cỏ"
 reading_time: "3 phút đọc"
 excerpt: "Giữa những pha bóng là vài giây để vận động viên điều chỉnh nhịp thở, thói quen và lựa chọn cho điểm kế tiếp."
