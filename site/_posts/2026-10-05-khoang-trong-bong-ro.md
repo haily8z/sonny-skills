@@ -2,6 +2,7 @@
 title: "Vì sao một cú ném ba điểm làm giãn cả hàng thủ?"
 date: 2026-10-05 08:00:00 +0700
 category: "Bóng rổ"
+sport: basketball
 author: "Sân Cỏ"
 reading_time: "3 phút đọc"
 excerpt: "Không chỉ cộng thêm điểm, mối đe dọa từ vạch ba điểm còn thay đổi cách đối thủ bảo vệ khu vực dưới rổ."
