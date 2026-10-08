@@ -1,0 +1,69 @@
+---
+layout: null
+---
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f3f0e8">
+<meta name="description" content="{{ site.description }}">
+<title>{{ site.title }} — Báo thể thao</title>
+<link rel="stylesheet" href="{{ '/assets/sports.css' | relative_url }}">
+</head>
+<body>
+<a class="skip" href="#main">Bỏ qua điều hướng</a>
+<div class="container">
+<header class="masthead">
+<div class="topline"><span class="edition">Báo thể thao độc lập</span><span>Số đầu tiên · {{ site.time | date: "%d.%m.%Y" }}</span></div>
+<div class="brandrow">
+<a class="brand" href="{{ '/the-thao/' | relative_url }}" aria-label="Sân Cỏ, trang chủ"><span class="brand-mark" aria-hidden="true">S</span><span class="brand-name">SÂN CỎ<small>TIN THỂ THAO · GÓC NHÌN MỚI</small></span></a>
+<a class="top-cta" href="https://github.com/haily8z/sonny-skills/blob/main/docs/the-thao-quan-ly-bai.md">Quản lý bài viết ↗</a>
+</div>
+<nav class="categories" aria-label="Chuyên mục"><span class="section-name">Chuyên mục</span><a class="active" href="#moi-nhat">Tất cả</a><a href="#moi-nhat">Bóng đá</a><a href="#moi-nhat">Bóng rổ</a><a href="#moi-nhat">Tennis</a><a href="#moi-nhat">Thể thao khác</a></nav>
+</header>
+<main id="main">
+<div class="paper-head"><span><strong>Góc sân hôm nay</strong> / Chuyện đáng đọc</span><span>Đọc chậm · Hiểu sâu</span></div>
+<div class="demo-notice">BẢN TRÌNH DIỄN — Các bài hiện trên trang là nội dung mẫu, không phải tin tức thời sự. Thêm bài thật qua GitHub theo hướng dẫn quản lý.</div>
+{% assign featured = site.posts.first %}
+{% if featured %}
+<div class="hero-grid">
+<a class="feature" href="{{ featured.url | relative_url }}">
+<div class="feature-art" aria-hidden="true">
+<svg viewBox="0 0 900 620" preserveAspectRatio="xMidYMid slice">
+<defs><linearGradient id="stadium" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#344558"/><stop offset=".55" stop-color="#101923"/><stop offset="1" stop-color="#14211f"/></linearGradient><radialGradient id="lights"><stop stop-color="#f0d58f" stop-opacity=".8"/><stop offset="1" stop-color="#f0d58f" stop-opacity="0"/></radialGradient><linearGradient id="grass" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#586d58"/><stop offset="1" stop-color="#223a34"/></linearGradient></defs>
+<rect width="900" height="620" fill="url(#stadium)"/><ellipse cx="215" cy="105" rx="160" ry="90" fill="url(#lights)"/><ellipse cx="700" cy="105" rx="160" ry="90" fill="url(#lights)"/>
+<path d="M0 185Q220 72 450 160q230-88 450 25v132H0Z" fill="#253342"/><path d="M0 222q180-77 450-16 270-61 450 16v71H0Z" fill="#38424c"/>
+<g fill="#d7f267" opacity=".72"><circle cx="82" cy="202" r="3"/><circle cx="125" cy="189" r="3"/><circle cx="177" cy="211" r="3"/><circle cx="226" cy="192" r="3"/><circle cx="274" cy="209" r="3"/><circle cx="336" cy="193" r="3"/><circle cx="394" cy="215" r="3"/><circle cx="493" cy="196" r="3"/><circle cx="550" cy="211" r="3"/><circle cx="610" cy="189" r="3"/><circle cx="675" cy="207" r="3"/><circle cx="741" cy="191" r="3"/><circle cx="817" cy="211" r="3"/></g>
+<path d="M0 307h900v313H0Z" fill="url(#grass)"/><path d="M0 350h900M0 450h900M0 550h900" stroke="#d9e2cb" stroke-opacity=".17" stroke-width="2"/><path d="M450 307v313M450 410a42 42 0 1 0 0 84 42 42 0 1 0 0-84" fill="none" stroke="#e8ecd9" stroke-opacity=".55" stroke-width="2"/><path d="M74 375h112v157H74m714-157H676v157h112" fill="none" stroke="#e8ecd9" stroke-opacity=".55" stroke-width="2"/>
+<path d="M0 590q167-29 315 2t285 0q153-30 300-2v30H0Z" fill="#1d2e2a"/>
+<g transform="translate(677 433)"><circle r="43" fill="#f6f3e8"/><path d="m0-20 17 12-7 20H-10l-7-20Zm-34-4 17-4 7 8-9 14-13-1Zm57 0 17-4 12 17-14 4-12-12ZM-20 31l4-19h17l8 16-12 14Zm47 0-4-19h-17l-8 16 12 14Z" fill="#17212b"/><circle r="43" fill="none" stroke="#fff" stroke-opacity=".7" stroke-width="2"/></g>
+<g fill="#111820"><circle cx="260" cy="353" r="17"/><path d="m247 374 30-3 21 87h-17l-16-47-7 51h-19l2-54-22 42h-16Z"/><circle cx="345" cy="389" r="15"/><path d="m330 408 27-2 19 72h-16l-14-38-5 42h-18l1-43-18 35h-15Z"/></g>
+</svg>
+</div>
+<div class="feature-content"><span class="tag demo">Bài mẫu · {{ featured.category | default: "Thể thao" }}</span><h1>{{ featured.title }}</h1><p>{{ featured.excerpt | strip_html | strip }}</p><div class="byline"><span>{{ featured.author | default: "Ban biên tập Sân Cỏ" }}</span><span>·</span><time datetime="{{ featured.date | date_to_xmlschema }}">{{ featured.date | date: "%d.%m.%Y" }}</time><span>·</span><span>{{ featured.reading_time | default: "5 phút đọc" }}</span></div></div>
+</a>
+<div class="feature-side">
+{% for post in site.posts offset:1 limit:2 %}
+<a class="side-story" href="{{ post.url | relative_url }}"><div><span class="story-type">{{ post.category | default: "Thể thao" }} · <span class="tag demo">Bài mẫu</span></span><h2>{{ post.title }}</h2><p>{{ post.excerpt | strip_html | strip | truncate: 135 }}</p></div><div class="story-bottom"><span>{{ post.date | date: "%d.%m.%Y" }} · {{ post.author | default: "Sân Cỏ" }}</span><span class="arrow" aria-hidden="true">↗</span></div></a>
+{% endfor %}
+</div>
+</div>
+{% endif %}
+<section class="latest" id="moi-nhat">
+<div class="section-bar"><h2>Mới trên mặt báo</h2><p>{{ site.posts | size }} bài · cập nhật theo bài mới nhất</p></div>
+<div class="news-grid">
+{% for post in site.posts offset:3 %}
+<a class="story-card" href="{{ post.url | relative_url }}"><div class="tags"><span class="small-tag">{{ post.category | default: "Thể thao" }}</span>{% if post.demo %}<span class="tag demo">Bài mẫu</span>{% endif %}</div><h3>{{ post.title }}</h3><p>{{ post.excerpt | strip_html | strip | truncate: 150 }}</p><div class="story-bottom"><span>{{ post.date | date: "%d.%m.%Y" }} · {{ post.author | default: "Sân Cỏ" }}</span><span class="arrow" aria-hidden="true">↗</span></div></a>
+{% else %}
+{% if site.posts.size < 4 %}<div class="story-card"><span class="small-tag">Còn chỗ trên mặt báo</span><h3>Bài viết tiếp theo sẽ xuất hiện ở đây.</h3><p>Thêm bài Markdown mới trong thư mục _posts của repo, trang sẽ tự cập nhật sau khi GitHub Actions chạy xong.</p><div class="story-bottom"><span>Hướng dẫn ở nút “Quản lý bài viết”</span><span class="arrow">＋</span></div></div>{% endif %}
+{% endfor %}
+</div>
+</section>
+<div class="sport-strip"><div class="container"><strong>Thể thao là cuộc chơi. Góc nhìn là của bạn.</strong><span>Viết điều đáng nhớ · Đọc điều có chiều sâu</span></div></div>
+<div class="admin-callout"><div><h2>Quản lý bài viết ngay trong GitHub</h2><p>Mỗi bài là một tệp Markdown: thêm bài, sửa nội dung rồi để Actions tự xuất bản.</p></div><a href="https://github.com/haily8z/sonny-skills/blob/main/docs/the-thao-quan-ly-bai.md">Xem hướng dẫn đăng bài ↗</a></div>
+</main>
+</div>
+<footer><div class="container"><span>© {{ site.time | date: "%Y" }} · SÂN CỎ · BÁO THỂ THAO</span><span><a href="{{ '/' | relative_url }}">Sonny Skills</a> · <a href="https://github.com/haily8z/sonny-skills">Mã nguồn trên GitHub ↗</a></span></div></footer>
+</body>
+</html>
