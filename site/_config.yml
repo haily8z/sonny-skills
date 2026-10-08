@@ -1,0 +1,17 @@
+title: "SÂN CỎ"
+description: "Báo thể thao độc lập — tin tức, phân tích và câu chuyện sau trận đấu."
+baseurl: "/sonny-skills"
+url: "https://haily8z.github.io"
+lang: "vi"
+timezone: Asia/Ho_Chi_Minh
+markdown: kramdown
+permalink: /the-thao/:year/:month/:day/:title/
+defaults:
+  - scope:
+      path: "_posts"
+      type: posts
+    values:
+      layout: article
+exclude:
+  - README.md
+  - CACH-DANG-BAI.md
