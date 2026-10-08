@@ -20,7 +20,7 @@ layout: null
 <a class="brand" href="{{ '/the-thao/' | relative_url }}" aria-label="Sân Cỏ, trang chủ"><span class="brand-mark" aria-hidden="true">S</span><span class="brand-name">SÂN CỎ<small>TIN THỂ THAO · GÓC NHÌN MỚI</small></span></a>
 <a class="top-cta" href="https://github.com/haily8z/sonny-skills/blob/main/docs/the-thao-quan-ly-bai.md">Quản lý bài viết ↗</a>
 </div>
-<nav class="categories" aria-label="Chuyên mục"><span class="section-name">Chuyên mục</span><a class="active" href="#moi-nhat">Tất cả</a><a href="#moi-nhat">Bóng đá</a><a href="#moi-nhat">Bóng rổ</a><a href="#moi-nhat">Tennis</a><a href="#moi-nhat">Thể thao khác</a></nav>
+<nav class="categories" aria-label="Chuyên mục"><span class="section-name">Chuyên mục</span><a class="active" href="#moi-nhat" data-filter="all" aria-current="page">Tất cả</a><a href="#moi-nhat" data-filter="football">Bóng đá</a><a href="#moi-nhat" data-filter="basketball">Bóng rổ</a><a href="#moi-nhat" data-filter="tennis">Tennis</a></nav>
 </header>
 <main id="main">
 <div class="paper-head"><span><strong>Góc sân hôm nay</strong> / Chuyện đáng đọc</span><span>Đọc chậm · Hiểu sâu</span></div>
@@ -28,7 +28,7 @@ layout: null
 {% assign featured = site.posts.first %}
 {% if featured %}
 <div class="hero-grid">
-<a class="feature" href="{{ featured.url | relative_url }}">
+<a class="feature" data-story data-sport="{{ featured.sport | default: "other" }}" href="{{ featured.url | relative_url }}">
 <div class="feature-art" aria-hidden="true">
 <svg viewBox="0 0 900 620" preserveAspectRatio="xMidYMid slice">
 <defs><linearGradient id="stadium" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#344558"/><stop offset=".55" stop-color="#101923"/><stop offset="1" stop-color="#14211f"/></linearGradient><radialGradient id="lights"><stop stop-color="#f0d58f" stop-opacity=".8"/><stop offset="1" stop-color="#f0d58f" stop-opacity="0"/></radialGradient><linearGradient id="grass" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#586d58"/><stop offset="1" stop-color="#223a34"/></linearGradient></defs>
@@ -45,25 +45,55 @@ layout: null
 </a>
 <div class="feature-side">
 {% for post in site.posts offset:1 limit:2 %}
-<a class="side-story" href="{{ post.url | relative_url }}"><div><span class="story-type">{{ post.category | default: "Thể thao" }}{% if post.demo %} · <span class="tag demo">Bài mẫu</span>{% endif %}</span><h2>{{ post.title }}</h2><p>{{ post.excerpt | strip_html | strip | truncate: 135 }}</p></div><div class="story-bottom"><span>{{ post.date | date: "%d.%m.%Y" }} · {{ post.author | default: "Sân Cỏ" }}</span><span class="arrow" aria-hidden="true">↗</span></div></a>
+<a class="side-story" data-story data-sport="{{ post.sport | default: "other" }}" href="{{ post.url | relative_url }}"><div><span class="story-type">{{ post.category | default: "Thể thao" }}{% if post.demo %} · <span class="tag demo">Bài mẫu</span>{% endif %}</span><h2>{{ post.title }}</h2><p>{{ post.excerpt | strip_html | strip | truncate: 135 }}</p></div><div class="story-bottom"><span>{{ post.date | date: "%d.%m.%Y" }} · {{ post.author | default: "Sân Cỏ" }}</span><span class="arrow" aria-hidden="true">↗</span></div></a>
 {% endfor %}
 </div>
 </div>
 {% endif %}
 <section class="latest" id="moi-nhat">
-<div class="section-bar"><h2>Mới trên mặt báo</h2><p>{{ site.posts | size }} bài · cập nhật theo bài mới nhất</p></div>
+<div class="section-bar"><h2>Mới trên mặt báo</h2><p><span id="articleCount">{{ site.posts | size }}</span> bài · cập nhật theo bài mới nhất</p></div>
 <div class="news-grid">
 {% for post in site.posts offset:3 %}
-<a class="story-card" href="{{ post.url | relative_url }}"><div class="tags"><span class="small-tag">{{ post.category | default: "Thể thao" }}</span>{% if post.demo %}<span class="tag demo">Bài mẫu</span>{% endif %}</div><h3>{{ post.title }}</h3><p>{{ post.excerpt | strip_html | strip | truncate: 150 }}</p><div class="story-bottom"><span>{{ post.date | date: "%d.%m.%Y" }} · {{ post.author | default: "Sân Cỏ" }}</span><span class="arrow" aria-hidden="true">↗</span></div></a>
+<a class="story-card" data-story data-sport="{{ post.sport | default: "other" }}" href="{{ post.url | relative_url }}"><div class="tags"><span class="small-tag">{{ post.category | default: "Thể thao" }}</span>{% if post.demo %}<span class="tag demo">Bài mẫu</span>{% endif %}</div><h3>{{ post.title }}</h3><p>{{ post.excerpt | strip_html | strip | truncate: 150 }}</p><div class="story-bottom"><span>{{ post.date | date: "%d.%m.%Y" }} · {{ post.author | default: "Sân Cỏ" }}</span><span class="arrow" aria-hidden="true">↗</span></div></a>
 {% else %}
 {% if site.posts.size < 4 %}<div class="story-card"><span class="small-tag">Còn chỗ trên mặt báo</span><h3>Bài viết tiếp theo sẽ xuất hiện ở đây.</h3><p>Thêm bài Markdown mới trong thư mục _posts của repo, trang sẽ tự cập nhật sau khi GitHub Actions chạy xong.</p><div class="story-bottom"><span>Hướng dẫn ở nút “Quản lý bài viết”</span><span class="arrow">＋</span></div></div>{% endif %}
 {% endfor %}
 </div>
+<div class="empty-state" id="emptyState" hidden>Chưa có bài trong mục này. Hãy chọn “Tất cả” để xem các bài đã đăng.</div>
 </section>
 <div class="sport-strip"><div class="container"><strong>Thể thao là cuộc chơi. Góc nhìn là của bạn.</strong><span>Viết điều đáng nhớ · Đọc điều có chiều sâu</span></div></div>
 <div class="admin-callout"><div><h2>Quản lý bài viết ngay trong GitHub</h2><p>Mỗi bài là một tệp Markdown: thêm bài, sửa nội dung rồi để Actions tự xuất bản.</p></div><a href="https://github.com/haily8z/sonny-skills/blob/main/docs/the-thao-quan-ly-bai.md">Xem hướng dẫn đăng bài ↗</a></div>
 </main>
 </div>
 <footer><div class="container"><span>© {{ site.time | date: "%Y" }} · SÂN CỎ · BÁO THỂ THAO</span><span><a href="{{ '/' | relative_url }}">Sonny Skills</a> · <a href="https://github.com/haily8z/sonny-skills">Mã nguồn trên GitHub ↗</a></span></div></footer>
+<script>
+(() => {
+  const filters = [...document.querySelectorAll("[data-filter]")];
+  const stories = [...document.querySelectorAll("[data-story]")];
+  const hero = document.querySelector(".hero-grid");
+  const empty = document.getElementById("emptyState");
+  const count = document.getElementById("articleCount");
+  filters.forEach((filter) => filter.addEventListener("click", (event) => {
+    event.preventDefault();
+    const value = filter.dataset.filter;
+    let visible = 0;
+    filters.forEach((item) => {
+      const active = item === filter;
+      item.classList.toggle("active", active);
+      if (active) item.setAttribute("aria-current", "page");
+      else item.removeAttribute("aria-current");
+    });
+    stories.forEach((story) => {
+      const show = value === "all" || story.dataset.sport === value;
+      story.hidden = !show;
+      if (show) visible++;
+    });
+    const heroVisible = [...hero.querySelectorAll("[data-story]")].some((story) => !story.hidden);
+    hero.hidden = !heroVisible;
+    empty.hidden = visible > 0;
+    count.textContent = String(visible);
+  }));
+})();
+</script>
 </body>
 </html>
