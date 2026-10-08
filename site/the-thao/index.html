@@ -24,7 +24,7 @@ layout: null
 </header>
 <main id="main">
 <div class="paper-head"><span><strong>Góc sân hôm nay</strong> / Chuyện đáng đọc</span><span>Đọc chậm · Hiểu sâu</span></div>
-<div class="demo-notice">BẢN TRÌNH DIỄN — Các bài hiện trên trang là nội dung mẫu, không phải tin tức thời sự. Thêm bài thật qua GitHub theo hướng dẫn quản lý.</div>
+{% assign demo_posts = site.posts | where: "demo", true %}{% if demo_posts.size > 0 %}<div class="demo-notice">Các nội dung gắn nhãn Bài mẫu chỉ dùng để minh họa, không phải tin tức thời sự.</div>{% endif %}
 {% assign featured = site.posts.first %}
 {% if featured %}
 <div class="hero-grid">
@@ -41,11 +41,11 @@ layout: null
 <g fill="#111820"><circle cx="260" cy="353" r="17"/><path d="m247 374 30-3 21 87h-17l-16-47-7 51h-19l2-54-22 42h-16Z"/><circle cx="345" cy="389" r="15"/><path d="m330 408 27-2 19 72h-16l-14-38-5 42h-18l1-43-18 35h-15Z"/></g>
 </svg>
 </div>
-<div class="feature-content"><span class="tag demo">Bài mẫu · {{ featured.category | default: "Thể thao" }}</span><h1>{{ featured.title }}</h1><p>{{ featured.excerpt | strip_html | strip }}</p><div class="byline"><span>{{ featured.author | default: "Ban biên tập Sân Cỏ" }}</span><span>·</span><time datetime="{{ featured.date | date_to_xmlschema }}">{{ featured.date | date: "%d.%m.%Y" }}</time><span>·</span><span>{{ featured.reading_time | default: "5 phút đọc" }}</span></div></div>
+<div class="feature-content"><span class="tag {% if featured.demo %}demo{% else %}red{% endif %}">{% if featured.demo %}Bài mẫu · {% endif %}{{ featured.category | default: "Thể thao" }}</span><h1>{{ featured.title }}</h1><p>{{ featured.excerpt | strip_html | strip }}</p><div class="byline"><span>{{ featured.author | default: "Ban biên tập Sân Cỏ" }}</span><span>·</span><time datetime="{{ featured.date | date_to_xmlschema }}">{{ featured.date | date: "%d.%m.%Y" }}</time><span>·</span><span>{{ featured.reading_time | default: "5 phút đọc" }}</span></div></div>
 </a>
 <div class="feature-side">
 {% for post in site.posts offset:1 limit:2 %}
-<a class="side-story" href="{{ post.url | relative_url }}"><div><span class="story-type">{{ post.category | default: "Thể thao" }} · <span class="tag demo">Bài mẫu</span></span><h2>{{ post.title }}</h2><p>{{ post.excerpt | strip_html | strip | truncate: 135 }}</p></div><div class="story-bottom"><span>{{ post.date | date: "%d.%m.%Y" }} · {{ post.author | default: "Sân Cỏ" }}</span><span class="arrow" aria-hidden="true">↗</span></div></a>
+<a class="side-story" href="{{ post.url | relative_url }}"><div><span class="story-type">{{ post.category | default: "Thể thao" }}{% if post.demo %} · <span class="tag demo">Bài mẫu</span>{% endif %}</span><h2>{{ post.title }}</h2><p>{{ post.excerpt | strip_html | strip | truncate: 135 }}</p></div><div class="story-bottom"><span>{{ post.date | date: "%d.%m.%Y" }} · {{ post.author | default: "Sân Cỏ" }}</span><span class="arrow" aria-hidden="true">↗</span></div></a>
 {% endfor %}
 </div>
 </div>
