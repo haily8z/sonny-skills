@@ -2,6 +2,7 @@
 title: "Pressing không phải chạy thật nhiều: đó là nghệ thuật đóng lối thoát"
 date: 2026-10-07 08:00:00 +0700
 category: "Bóng đá"
+sport: football
 author: "Sân Cỏ"
 reading_time: "4 phút đọc"
 excerpt: "Một bài phân tích mẫu về cách cả đội cùng thu hẹp lựa chọn của đối thủ, thay vì chỉ đuổi theo trái bóng."
