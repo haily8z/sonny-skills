@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101018">
+<meta name="description" content="Biến một ý tưởng thành phim hoạt hình ngắn có nhân vật, cảm xúc và chuyển động thật — cùng Muse Animated Film.">
+<title>Muse Animated Film — Từ ý tưởng đến phim ngắn</title>
+<style>
+:root{color-scheme:dark;--ink:#f7f2e9;--muted:#b8b3c2;--bg:#101018;--panel:#191822;--line:#ffffff20;--lime:#d6f36a;--pink:#fb8b91;--blue:#9bb6ff;--serif:Georgia,"Times New Roman",serif;--sans:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.55}a{color:inherit}.wrap{width:min(1160px,calc(100% - 48px));margin:auto}
+nav{height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.brand{display:flex;gap:11px;align-items:center;text-decoration:none;font-weight:700;letter-spacing:.02em}.mark{width:31px;height:31px;border:1px solid #ffffff70;border-radius:50%;display:grid;place-items:center;color:var(--lime);font-size:17px}nav .links{display:flex;gap:28px;align-items:center;font-size:13px;color:var(--muted)}nav .links a{text-decoration:none}nav .links a:hover{color:var(--ink)}.nav-cta{padding:10px 15px;border:1px solid var(--line);border-radius:999px;color:var(--ink)!important}
+.hero{min-height:670px;display:grid;grid-template-columns:1.04fr .96fr;gap:64px;align-items:center;padding:78px 0 96px;position:relative}.eyebrow{color:var(--lime);font-size:11px;font-weight:700;letter-spacing:.19em;text-transform:uppercase;display:flex;gap:10px;align-items:center}.eyebrow:before{content:"";width:27px;height:1px;background:var(--lime)}h1{font-family:var(--serif);font-weight:400;font-size:clamp(56px,7vw,92px);line-height:.99;letter-spacing:-.055em;margin:26px 0 23px;max-width:650px}h1 em{font-weight:400;color:var(--lime)}.hero-copy{color:var(--muted);font-size:17px;max-width:470px}.actions{display:flex;gap:13px;align-items:center;margin-top:32px;flex-wrap:wrap}.button{display:inline-flex;align-items:center;gap:12px;padding:14px 20px;border-radius:3px;background:var(--lime);color:#171811;text-decoration:none;font-size:13px;font-weight:750;transition:transform .2s,background .2s}.button:hover{transform:translateY(-2px);background:#e5ff8a}.text-link{font-size:13px;color:var(--muted);text-decoration:none;padding:10px}.text-link:hover{color:var(--ink)}.meta{display:flex;gap:22px;margin-top:36px;color:#8f899d;font-size:11px;letter-spacing:.04em}.meta span{display:flex;align-items:center;gap:7px}.meta i{width:4px;height:4px;border-radius:50%;background:var(--pink)}
+.poster{height:500px;position:relative;overflow:hidden;border:1px solid #ffffff24;background:linear-gradient(155deg,#e9a887 0%,#795d82 39%,#22253f 76%,#131522 100%);isolation:isolate}.poster:before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#111320 2%,transparent 55%),radial-gradient(ellipse at 70% 25%,#ffe3b77a,transparent 38%);z-index:-1}.moon{position:absolute;width:136px;height:136px;border-radius:50%;background:#ffdcaa;right:18%;top:12%;box-shadow:0 0 65px #ffcc8c80}.hill{position:absolute;bottom:-80px;left:-10%;width:125%;height:255px;background:#292d49;border-radius:50% 50% 0 0;transform:rotate(-8deg)}.hill:after{content:"";position:absolute;width:120%;height:210px;background:#161b30;left:-7%;top:94px;border-radius:50% 50% 0 0;transform:rotate(9deg)}.lantern{position:absolute;left:20%;bottom:30%;width:18px;height:104px;background:#202236;border-radius:8px 8px 3px 3px;box-shadow:0 0 30px #ffdb8a}.lantern:before{content:"";position:absolute;width:74px;height:93px;left:-28px;top:-4px;background:linear-gradient(90deg,transparent,#ffdf8d3e,transparent);clip-path:polygon(43% 0,57% 0,100% 100%,0 100%)}.lantern:after{content:"";position:absolute;width:35px;height:17px;border:3px solid #202236;border-bottom:0;border-radius:30px 30px 0 0;left:-8px;top:-15px}.figure{position:absolute;bottom:21%;left:51%;width:33px;height:82px;background:#101522;border-radius:17px 17px 8px 8px;z-index:2}.figure:before{content:"";position:absolute;width:29px;height:29px;border-radius:50%;background:#101522;top:-22px;left:2px}.figure:after{content:"";position:absolute;width:70px;height:13px;background:#101522;top:37px;left:-36px;transform:rotate(-20deg);border-radius:8px}.film-label{position:absolute;left:28px;top:27px;color:#fff9;font-size:10px;letter-spacing:.18em;text-transform:uppercase}.poster-caption{position:absolute;bottom:28px;left:29px;right:29px;display:flex;align-items:end;justify-content:space-between;z-index:3}.poster-caption strong{font:27px var(--serif);font-weight:400}.poster-caption span{font-size:9px;letter-spacing:.14em;color:#e5d9dc;text-align:right;text-transform:uppercase}.frame{position:absolute;inset:12px;border:1px solid #ffffff23;pointer-events:none}
+.ticker{border-block:1px solid var(--line);padding:17px 0;overflow:hidden;color:#a09aaa;font:italic 17px var(--serif);white-space:nowrap}.ticker span{padding:0 30px}.ticker b{color:var(--pink);font:normal 9px var(--sans)}
+section{padding:105px 0}.section-top{display:flex;justify-content:space-between;align-items:end;gap:36px;margin-bottom:50px}.kicker{color:var(--pink);font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:700}h2{font:400 clamp(40px,5vw,62px)/1.06 var(--serif);letter-spacing:-.04em;margin:15px 0 0;max-width:620px}.section-intro{max-width:360px;color:var(--muted);font-size:14px;margin:0 0 4px}.steps{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}.step{padding:25px 23px 10px 0;border-right:1px solid var(--line);min-height:220px}.step+.step{padding-left:23px}.step:last-child{border:0}.step-no{font:italic 13px var(--serif);color:var(--lime)}.step h3{font:25px var(--serif);font-weight:400;margin:36px 0 9px}.step p{font-size:12px;color:var(--muted);max-width:220px;margin:0}
+.deliver{background:#191822;border-block:1px solid var(--line)}.deliver-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:90px;align-items:start}.deliver h2{font-size:clamp(42px,5vw,60px)}.deliver-intro{color:var(--muted);font-size:14px;max-width:400px;margin-top:22px}.checks{display:grid;grid-template-columns:1fr 1fr;gap:0 28px}.check{padding:18px 0;border-bottom:1px solid var(--line);display:flex;gap:13px;align-items:flex-start}.check-mark{color:var(--lime);font-size:16px}.check strong{display:block;font-size:13px;font-weight:600}.check small{display:block;color:var(--muted);font-size:11px;margin-top:3px}
+.modes{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:45px}.mode{border:1px solid var(--line);padding:24px 26px}.mode .tag{color:var(--blue);font-size:10px;letter-spacing:.15em;text-transform:uppercase}.mode h3{font:24px var(--serif);font-weight:400;margin:10px 0}.mode p{font-size:12px;color:var(--muted);margin:0}
+.quote{padding:98px 0 105px;text-align:center}.quote blockquote{font:clamp(28px,4vw,47px)/1.2 var(--serif);max-width:850px;margin:22px auto 26px;letter-spacing:-.025em}.quote blockquote em{color:var(--lime)}.quote cite{font-style:normal;color:var(--muted);font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+.start{background:var(--lime);color:#161811;padding:70px 0}.start-row{display:flex;justify-content:space-between;align-items:center;gap:30px}.start .kicker{color:#5c682f}.start h2{font-size:clamp(38px,5vw,58px);max-width:620px}.start p{color:#424832;font-size:13px;margin:12px 0 0}.start .button{background:#171811;color:var(--lime)}.start .button:hover{background:#303326}
+footer{padding:26px 0;color:#817c8b;font-size:10px}footer .wrap{display:flex;justify-content:space-between;gap:20px;align-items:center}footer a{text-decoration:none}footer a:hover{color:var(--ink)}
+@media(max-width:800px){.hero{grid-template-columns:1fr;gap:42px;padding:65px 0 75px}.poster{height:min(500px,112vw)}.hero-copy{font-size:15px}.section-top{display:block}.section-intro{margin-top:18px}.steps{grid-template-columns:1fr 1fr}.step:nth-child(2){border-right:0}.step:nth-child(3){padding-left:0}.step:nth-child(n+3){border-top:1px solid var(--line);padding-top:24px}.deliver-grid{grid-template-columns:1fr;gap:35px}.start-row{align-items:flex-start;flex-direction:column}.start .button{margin-top:4px}}
+@media(max-width:520px){.wrap{width:calc(100% - 34px)}nav{height:64px}.links>a:not(.nav-cta){display:none}.hero{min-height:auto}h1{font-size:59px}.poster{height:410px}.steps{grid-template-columns:1fr}.step,.step+.step,.step:nth-child(3){padding:20px 0;border-right:0;border-top:1px solid var(--line);min-height:0}.step h3{margin:17px 0 5px}.step:first-child{border-top:0}.checks{grid-template-columns:1fr}.modes{grid-template-columns:1fr}.section-top{margin-bottom:34px}section{padding:75px 0}.quote{padding:75px 0}.meta{gap:13px;flex-wrap:wrap}footer .wrap{align-items:flex-start;flex-direction:column}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav aria-label="Điều hướng chính">
+<a class="brand" href="#" aria-label="Muse Animated Film"><span class="mark">✳</span><span>MUSE <span style="font-weight:400;color:#aaa4b5">/ ANIMATED FILM</span></span></a>
+<div class="links"><a href="#quy-trinh">Quy trình</a><a href="#ban-giao">Bạn nhận được gì</a><a class="nav-cta" href="#bat-dau">Bắt đầu một bộ phim ↗</a></div>
+</nav>
+<main>
+<div class="hero">
+<div>
+<div class="eyebrow">Một ý tưởng. Một bộ phim.</div>
+<h1>Kể câu chuyện<br>của bạn bằng<br><em>hoạt hình.</em></h1>
+<p class="hero-copy">Từ một dòng ý tưởng đến phim ngắn có nhân vật nhất quán, từng cảnh giàu cảm xúc và chuyển động liền mạch — với quy trình Muse Animated Film.</p>
+<div class="actions"><a class="button" href="https://github.com/haily8z/sonny-skills/tree/main/skills/muse-animated-film">Khám phá skill <span>↗</span></a><a class="text-link" href="#quy-trinh">Xem quy trình ↓</a></div>
+<div class="meta"><span><i></i> Phim ngắn có cốt truyện</span><span><i></i> Từ ý tưởng đến MP4</span></div>
+</div>
+<div class="poster" role="img" aria-label="Minh họa một người giữ đèn bên ngọn hải đăng trong buổi hoàng hôn">
+<div class="frame"></div><div class="film-label">A MUSE ANIMATED SHORT · 01</div><div class="moon"></div><div class="hill"></div><div class="lantern"></div><div class="figure"></div><div class="poster-caption"><strong>The Last Lantern</strong><span>Every light<br>has a story</span></div>
+</div>
+</div>
+</main>
+</div>
+<div class="ticker" aria-hidden="true"><div class="wrap"><span>STORY</span><b>✦</b><span>CHARACTERS</span><b>✦</b><span>KEYFRAMES</span><b>✦</b><span>MOTION</span><b>✦</b><span>VOICE</span><b>✦</b><span>A FILM THAT FEELS LIKE YOURS</span></div></div>
+<section id="quy-trinh"><div class="wrap">
+<div class="section-top"><div><div class="kicker">Từ bản nháp đến khung hình cuối</div><h2>Một quy trình có chủ đích.</h2></div><p class="section-intro">Mỗi bước được thiết kế để câu chuyện rõ ràng, nhân vật không “đổi mặt” và các cảnh nối tiếp tự nhiên.</p></div>
+<div class="steps">
+<article class="step"><span class="step-no">01 / Câu chuyện</span><h3>Tìm mạch cảm xúc</h3><p>Chốt ý tưởng, nhân vật, ngôn ngữ hình ảnh và nhịp kể trước khi tạo hình.</p></article>
+<article class="step"><span class="step-no">02 / Nhân vật</span><h3>Giữ đúng một nhân vật</h3><p>Tạo character sheet làm chuẩn tham chiếu cho mọi cảnh trong phim.</p></article>
+<article class="step"><span class="step-no">03 / Từng cảnh</span><h3>Nối khung hình</h3><p>Lập keyframe và chuyển động với continuity để câu chuyện trôi liền mạch.</p></article>
+<article class="step"><span class="step-no">04 / Phim hoàn chỉnh</span><h3>Dựng và hoàn thiện</h3><p>Thêm giọng kể, âm thanh và chữ chính xác; xuất phim theo tỷ lệ đã chọn.</p></article>
+</div>
+</div></section>
+<section class="deliver" id="ban-giao"><div class="wrap deliver-grid">
+<div><div class="kicker">Không dừng ở một prompt</div><h2>Một bộ phim, đủ các mảnh ghép.</h2><p class="deliver-intro">Bạn có thể duyệt từng chặng hoặc chọn chạy thẳng đến phim cuối. Mỗi đầu ra được kiểm tra trước khi chuyển bước.</p></div>
+<div><div class="checks">
+<div class="check"><span class="check-mark">✳</span><div><strong>Story bible & kịch bản</strong><small>Logline, nhân vật, nhịp cảnh và lời kể</small></div></div>
+<div class="check"><span class="check-mark">✳</span><div><strong>Mega prompt từng cảnh</strong><small>Chỉ dẫn hình ảnh và chuyển động rõ ràng</small></div></div>
+<div class="check"><span class="check-mark">✳</span><div><strong>Character sheet</strong><small>Khóa diện mạo nhất quán xuyên suốt</small></div></div>
+<div class="check"><span class="check-mark">✳</span><div><strong>Keyframe liền mạch</strong><small>Điểm nối khung hình giữa các cảnh</small></div></div>
+<div class="check"><span class="check-mark">✳</span><div><strong>Giọng kể & lời thoại</strong><small>Giữ nguyên ngôn ngữ bạn đã chọn</small></div></div>
+<div class="check"><span class="check-mark">✳</span><div><strong>Phim MP4 hoàn chỉnh</strong><small>Đúng tỷ lệ, có âm thanh và phụ đề khi cần</small></div></div>
+</div><div class="modes"><article class="mode"><span class="tag">Chế độ 01</span><h3>Duyệt từng phần</h3><p>Xem và duyệt kịch bản, hình tham chiếu, giọng đọc và từng clip qua các checkpoint.</p></article><article class="mode"><span class="tag">Chế độ 02</span><h3>Chạy luôn</h3><p>Giao các thông số một lần, để pipeline thực hiện liền mạch đến phim cuối.</p></article></div></div>
+</div></section>
+<section class="quote"><div class="wrap"><div class="kicker">Từ một dự án đã kiểm chứng</div><blockquote>“Nhân vật giữ đúng diện mạo. Khung hình nối tiếp nhau. Câu chuyện đi đến <em>một cái kết.</em>”</blockquote><cite>The Last Lantern · 8 cảnh · phim hoạt hình ngắn</cite></div></section>
+<section class="start" id="bat-dau"><div class="wrap start-row"><div><div class="kicker">Bắt đầu bằng ý tưởng của bạn</div><h2>Hãy kể câu chuyện bạn muốn xem.</h2><p>Mở skill để xem hướng dẫn, đầu ra mẫu và cách bắt đầu dự án.</p></div><a class="button" href="https://github.com/haily8z/sonny-skills/tree/main/skills/muse-animated-film">Mở Muse Animated Film <span>↗</span></a></div></section>
+<footer><div class="wrap"><span>© 2026 · Muse Animated Film · Sonny Skills</span><span><a href="https://github.com/haily8z/sonny-skills">Sonny Skills on GitHub ↗</a> &nbsp;·&nbsp; Thiết kế cho những câu chuyện đáng nhớ.</span></div></footer>
+</body>
+</html>
