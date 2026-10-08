@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f3f0e8">
+<meta name="description" content="{{ page.excerpt | strip_html | strip | escape }}">
+<title>{{ page.title }} — Sân Cỏ</title>
+<link rel="stylesheet" href="{{ '/assets/sports.css' | relative_url }}">
+</head>
+<body>
+<a class="skip" href="#main">Bỏ qua điều hướng</a>
+<div class="container">
+<header class="masthead">
+<div class="topline"><span class="edition">Báo thể thao độc lập</span><span>Phân tích · Chiến thuật · Câu chuyện</span></div>
+<div class="brandrow"><a class="brand" href="{{ '/the-thao/' | relative_url }}"><span class="brand-mark" aria-hidden="true">S</span><span class="brand-name">SÂN CỎ<small>TIN THỂ THAO · GÓC NHÌN MỚI</small></span></a><a class="top-cta" href="{{ '/the-thao/' | relative_url }}">Về trang chủ ↗</a></div>
+</header>
+<main id="main">
+<article>
+<header class="article-hero">
+<a class="crumb" href="{{ '/the-thao/' | relative_url }}">Sân Cỏ / {{ page.category | default: "Thể thao" }}</a>
+<h1>{{ page.title }}</h1>
+<p class="dek">{{ page.excerpt | strip_html | strip }}</p>
+<div class="article-meta"><span>{{ page.author | default: "Ban biên tập Sân Cỏ" }}</span><span>·</span><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%d.%m.%Y" }}</time><span>·</span><span>{{ page.reading_time | default: "5 phút đọc" }}</span>{% if page.demo %}<span class="tag demo">Bài mẫu</span>{% endif %}</div>
+</header>
+<div class="article-body">
+{% if page.demo %}<div class="demo-notice">BÀI MẪU — Nội dung minh họa cách trình bày, không phải tin tức thời sự.</div>{% endif %}
+{{ content }}
+<div class="article-footer">Bạn đang đọc Sân Cỏ · <a href="{{ '/the-thao/' | relative_url }}">Trở về trang tin thể thao</a></div>
+</div>
+</article>
+</main>
+</div>
+<footer><div class="container"><span>© {{ site.time | date: "%Y" }} · SÂN CỎ · BÁO THỂ THAO</span><span><a href="https://github.com/haily8z/sonny-skills/blob/main/docs/the-thao-quan-ly-bai.md">Cách đăng bài</a></span></div></footer>
+</body>
+</html>
